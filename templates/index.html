@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+{% load scheduletags i18n %}
+{% block head_title %}Contact || {{ block.super }}{% endblock head_title %}
+{% block content %}
+<div class="container-fluid">
+<!-- Example row of columns -->
+<div class="row">
+   <div class="col-md-3">
+      <div class="card">
+         <h5 class="card-header">{% trans "Manage Campaign" %}</h5>
+         <div class="card-body">
+            <center>
+            <img class="rounded p-5" src="/media/manage_campaign_icon.jpg" alt="Card image cap">
+            </center>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-3">
+      <div class="card">
+         <h5 class="card-header">{% trans "Manage Mailing List" %}</h5>
+         <div class="card-body">
+            <center>
+            <img class="rounded p-5" src="/media/manage_mailing_list_icon.jpg" alt="Card image cap">
+            </center>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-3">
+      <div class="card">
+         <h5 class="card-header">{% trans "Manage Templates" %}</h5>
+         <div class="card-body">
+            <center>
+            <img class="rounded p-5" src="/media/manage_templates_icon.jpg" alt="Card image cap">
+         </center>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-3">
+      <div class="card">
+         <h5 class="card-header">{% trans "Reports & Statistics" %}</h5>
+         <div class="card-body">
+            <center>
+            <img class="rounded p-5" src="/media/manage_reports_icon.jpg" alt="Card image cap">
+         </center>   
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-md-8">
+      <div class="card1">
+         <div class="card1-header">
+            <center>My Actions</center>
+         </div>
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item">{% trans 'Financial Services - Customer Value Proposition' %}<br>
+               <button type="button" class="btn btn-primary mini">Draft</button>
+            </li>
+            <li class="list-group-item">{% trans 'CommGen Introduction' %}<br>
+               <button type="button" class="btn btn-primary mini">Draft</button>
+            </li>
+            <li class="list-group-item">{% trans 'Financial Services - Customer Value Proposition' %}<br>
+               <button type="button" class="btn btn-primary mini">Approval</button>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <div class="col-md-4" align="center">
+      <ul class="nav nav-tabs" id="myTab" role="tablist" style="max-width: 74%">
+         <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Calendar</a>
+         </li>
+         <li class="nav-item" style="margin-left: 14%">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">CommGen Calendar</a>
+         </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!-- <div class="card1"> -->
+               {% prevnext "month_calendar" calendar period "F Y"%}
+               <!-- <div class="center"> -->
+                  {% month_table calendar period "small" %}
+               <!-- </div> -->
+            <!-- </div> -->
+         </div>
+         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <!-- <div class="card1"> -->
+               {% include "schedule/_dialogs.html" %}
+               <div class="now row-centered">{% prevnext "month_calendar" calendar period "F Y"%}</div>
+               <!-- <div class="center"> -->
+                  {% month_table calendar period "small" %}
+               <!-- </div> -->
+            <!-- </div> -->
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+{% endblock  %}

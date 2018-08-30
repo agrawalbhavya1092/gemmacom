@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<h1>{% trans "Sign In" %}</h1>
+
+<form class="login" method="POST" action="{% url 'login' %}">
+  {% csrf_token %}
+
+<div class="container">	
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			<!-- Start form -->
+                    <form>
+                      <div class="form-group">
+                          	<label for="id_username">Email address</label>
+    						<input type="text" name="username" class="form-control" aria-describedby="emailHelp" maxlength="254" required="" id="id_username">
+                      </div>
+                      <div class="form-group">
+                        <label for="id_password">Password</label>
+  						<input type="password" class="form-control" name="password" required="" id="id_password">
+                      </div>
+                      <div class="form-check">
+                        <button class="btn btn-info" type="button" name="showpassword" id="showpassword" value="Show Password">Show password</button> 
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                      
+                    </form>
+
+
+			<!-- End form -->
+		</div>
+		
+	
+		
+	</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	// Show password Button
+	$("#showpassword").on('click', function(){
+		
+		var pass = $("#id_password");
+		var fieldtype = pass.attr('type');
+		if (fieldtype == 'password') {
+			pass.attr('type', 'text');
+			$(this).text("Hide Password");
+		}else{
+			pass.attr('type', 'password');
+			$(this).text("Show Password");
+		}
+
+
+	});
+});
+
+</script>
+{% endblock %}
