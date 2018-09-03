@@ -30,7 +30,7 @@ urlpatterns = [
         kwargs={'period': Month}),
 
     url(r'^calendar/month/(?P<calendar_slug>[-\w]+)/$',
-        CalendarByPeriodsView.as_view(template_name='index.html'),
+        CalendarByPeriodsView.as_view(template_name='schedule/calendar_month.html'),
         name='month_calendar',
         kwargs={'period': Month}),
 
@@ -38,19 +38,27 @@ urlpatterns = [
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_week.html'),
         name='week_calendar',
         kwargs={'period': Week}),
+    url(r'^mycalendar/week/(?P<calendar_slug>[-\w]+)/$',
+        CalendarByPeriodsView.as_view(template_name='schedule/my_calendar_week.html'),
+        name='my_week_calendar',
+        kwargs={'period': Week}),
 
     url(r'^calendar/daily/(?P<calendar_slug>[-\w]+)/$',
         CalendarByPeriodsView.as_view(template_name='schedule/calendar_day.html'),
         name='day_calendar',
         kwargs={'period': Day}),
+    url(r'^mycalendar/daily/(?P<calendar_slug>[-\w]+)/$',
+        CalendarByPeriodsView.as_view(template_name='schedule/my_calendar_day.html'),
+        name='my_day_calendar',
+        kwargs={'period': Day}),
 
-    url(r'^calendar/(?P<calendar_slug>[-\w]+)/$',
-        CalendarView.as_view(),
-        name='calendar_home',
-        ),
-    url(r'^fullcalendar/(?P<calendar_slug>[-\w]+)/$',
-        FullCalendarView.as_view(),
-        name='fullcalendar'),
+    # url(r'^calendar/(?P<calendar_slug>[-\w]+)/$',
+    #     CalendarView.as_view(),
+    #     name='calendar_home',
+    #     ),
+    # url(r'^fullcalendar/(?P<calendar_slug>[-\w]+)/$',
+    #     FullCalendarView.as_view(),
+    #     name='fullcalendar'),
 
     # Event Urls
     url(r'^event/create/(?P<calendar_slug>[-\w]+)/$',

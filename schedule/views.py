@@ -24,7 +24,7 @@ from schedule.models import Calendar, Event, Occurrence
 from schedule.periods import weekday_names
 from schedule.settings import (
     CHECK_EVENT_PERM_FUNC, CHECK_OCCURRENCE_PERM_FUNC, EVENT_NAME_PLACEHOLDER,
-    GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT, USE_FULLCALENDAR,
+    GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT, USE_FULLCALENDAR,GET_MY_EVENTS_FUNC
 )
 from schedule.utils import (
     check_calendar_permissions, check_event_permissions,
@@ -100,19 +100,20 @@ class CalendarByPeriodsView(CalendarMixin, DetailView):
         else:
             date = timezone.now()
         event_list = GET_EVENTS_FUNC(self.request, calendar)
-
+        my_event_list = GET_MY_EVENTS_FUNC(self.request, calendar)
         local_timezone = timezone.get_current_timezone()
         period = period_class(event_list, date, tzinfo=local_timezone)
+        my_period = period_class(my_event_list, date, tzinfo=local_timezone)
 
         context.update({
             'date': date,
             'period': period,
+            'my_period': my_period,
             'calendar': calendar,
             'weekday_names': weekday_names,
             'here': quote(self.request.get_full_path()),
         })
         return context
-
 
 class OccurrenceMixin(CalendarViewPermissionMixin, TemplateResponseMixin):
     model = Occurrence

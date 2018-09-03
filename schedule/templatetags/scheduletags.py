@@ -38,6 +38,31 @@ def month_table(context, calendar, month, size='regular', shift=None):
     context['size'] = size
     return context
 
+@register.inclusion_tag('schedule/_my_month_table.html', takes_context=True)
+def my_month_table(context, calendar, month, size='regular', shift=None):
+    if shift:
+        if shift == -1:
+            month = month.prev()
+        if shift == 1:
+            month = next(month)
+    if size == 'small':
+        context['day_names'] = weekday_abbrs
+    else:
+        context['day_names'] = weekday_names
+    context['calendar'] = calendar
+    context['month'] = month
+    context['size'] = size
+    return context
+
+@register.inclusion_tag('schedule/_my_day_cell.html', takes_context=True)
+def my_day_cell(context, calendar, day, month, size='regular'):
+    context.update({
+        'calendar': calendar,
+        'day': day,
+        'month': month,
+        'size': size
+    })
+    return context
 
 @register.inclusion_tag('schedule/_day_cell.html', takes_context=True)
 def day_cell(context, calendar, day, month, size='regular'):
@@ -229,6 +254,18 @@ def prevnext(target, calendar, period, fmt=None):
         'calendar': calendar,
         'period': period,
         'period_name': format(period.start, fmt),
+        'target': target,
+    }
+    return context
+
+@register.inclusion_tag('schedule/_myprevnext.html')
+def myprevnext(target, calendar, my_period, fmt=None):
+    if fmt is None:
+        fmt = settings.DATE_FORMAT
+    context = {
+        'calendar': calendar,
+        'my_period': my_period,
+        'period_name': format(my_period.start, fmt),
         'target': target,
     }
     return context

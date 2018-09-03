@@ -48,6 +48,14 @@ if not GET_EVENTS_FUNC:
 
     GET_EVENTS_FUNC = get_events
 
+GET_MY_EVENTS_FUNC = getattr(settings, 'GET_EVENTS_FUNC', None)
+if not GET_MY_EVENTS_FUNC:
+    def get_events(request, calendar):
+        # print(".................",calendar.event_set.prefetch_related('rule').filter(creator=request.user))
+        return calendar.event_set.prefetch_related('occurrence_set', 'rule').filter(creator=request.user)
+
+    GET_MY_EVENTS_FUNC = get_events
+
 # URL to redirect to to after an occurrence is canceled
 OCCURRENCE_CANCEL_REDIRECT = getattr(settings, 'OCCURRENCE_CANCEL_REDIRECT', None)
 
