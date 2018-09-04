@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import static
 from django.urls import path
 from django.conf.urls import url
-from myapp.views import home,MyView
+from myapp.views import home,MyView,LoadCalendar,load_prevnext_calendar
 from django.conf.urls import include
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.auth import views as auth_views
@@ -27,6 +27,8 @@ urlpatterns = [
 	path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('', home,name = 'home'),
+    # path('ajax/load_prevnext_calendar', load_prevnext_calendar,name = 'load_prevnext_calendar',kwargs={'calendar_slug':'calendar1','period': Month}),
+    path('ajax/load_prevnext_calendar', LoadCalendar.as_view(),name = 'load_prevnext_calendar',kwargs={'calendar_slug':'calendar1','period': Month}),
     path('schedule/', include('schedule.urls')),
     path('login/', auth_views.login, name='login'),
     url(r'^main_page/(?P<calendar_slug>[-\w]+)/$', MyView.as_view(), name='main_page',kwargs={'period': Month}),

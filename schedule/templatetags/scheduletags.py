@@ -227,10 +227,12 @@ def prev_url(target, calendar, period):
     if delta.total_seconds() > SCHEDULER_PREVNEXT_LIMIT_SECONDS:
         return ''
 
-    return mark_safe('<a href="%s%s"><i class="fa fa-angle-left" style="color:#f16e00; margin-right:40px"></i></a>' % (
+    return mark_safe('<a href="%s%s" id="id_prev"><i class="fa fa-angle-left" style="color:#f16e00; margin-right:40px"></i></a>' % (
         reverse(target, kwargs={'calendar_slug': slug}),
         querystring_for_date(period.prev().start)))
-
+    # return mark_safe('<a load-calendar-url = "%s%s" id="id_prev"><i class="fa fa-angle-left" style="color:#f16e00; margin-right:40px"></i></a>' % (
+    #     reverse(target, kwargs={'calendar_slug': slug}),
+    #     querystring_for_date(period.prev().start)))
 
 @register.simple_tag
 def next_url(target, calendar, period):
@@ -244,7 +246,9 @@ def next_url(target, calendar, period):
     return mark_safe('<a href="%s%s"><i class="fa fa-angle-right" style="color:#f16e00;margin-left:40px"></i></a>' % (
         reverse(target, kwargs={'calendar_slug': slug}),
         querystring_for_date(period.next().start)))
-
+    # return mark_safe('<i class="fa fa-angle-right" load-calendar-url = "%s%s" id="id_next" style="color:#f16e00;margin-left:40px"></i>' % (
+        # reverse(target, kwargs={'calendar_slug': slug}),
+        # querystring_for_date(period.next().start)))
 
 @register.inclusion_tag('schedule/_prevnext.html')
 def prevnext(target, calendar, period, fmt=None):
