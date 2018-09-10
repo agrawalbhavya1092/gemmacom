@@ -10,15 +10,15 @@
       <div class="card">
          <h5 class="card-header">{% trans "Manage Campaign" %}</h5>
          <div class="card-body">
-          <div class="row align-items-baseline" style="padding-bottom: 5%">
-            <div class="col-md-3" style="bottom: 0">
+          <div class="row" style="padding-bottom: 5%">
+            <div class="col-md-3 col-xs-3" style="padding-left: 10%;padding-top: 25%">
               <p>23</p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
             <img class="rounded p-3" src="/media/manage_campaign_icon.jpg" alt="Card image cap">
               
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-xs-3"  style="padding-left: 10%;padding-top: 25%">
               <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
             </div>
           </div>
@@ -30,13 +30,13 @@
          <h5 class="card-header">{% trans "Manage Mailing List" %}</h5>
          <div class="card-body">
           <div class="row" style="padding-bottom: 5%">
-            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+            <div class="col-md-3 col-xs-3" style="padding-left: 10%;padding-top: 25%">
               2
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
             <img class="rounded p-3" src="/media/manage_mailing_list_icon.jpg" alt="Card image cap">
             </div>
-            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+            <div class="col-md-3 col-xs-3" style="padding-left: 10%;padding-top: 25%">
               <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
             </div>
           </div>
@@ -48,13 +48,13 @@
          <h5 class="card-header">{% trans "Manage Templates" %}</h5>
          <div class="card-body">
           <div class="row" style="padding-bottom: 5%">
-            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+            <div class="col-md-3 col-xs-3" style="padding-left: 10%;padding-top: 25%">
               2
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
             <img class="rounded p-3" src="/media/manage_templates_icon.jpg" alt="Card image cap">
             </div>
-            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+            <div class="col-md-3 col-xs-3" style="padding-left: 10%;padding-top: 25%">
               <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
             </div>
           </div>
@@ -66,13 +66,13 @@
          <h5 class="card-header">{% trans "Reports & Statistics" %}</h5>
          <div class="card-body">
           <div class="row" style="padding-bottom: 5%">
-            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+            <div class="col-md-3 col-xs-3" style="padding-left: 10%;padding-top: 25%">
               12
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
             <img class="rounded p-3" src="/media/manage_reports_icon.jpg" alt="Card image cap">
             </div>
-            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+            <div class="col-md-3 col-xs-3" style="padding-left: 10%;padding-top: 25%">
               <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
             </div>
           </div>
@@ -84,7 +84,7 @@
    <div class="col-md-8">
       <div class="card" style="max-height: 35%">
          <div class="card-header">
-            <center>My Actions</center>
+            <center>{% trans 'My Actions' %}</center>
          </div>
          <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -154,10 +154,10 @@
    <div class="col-md-4" align="center">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
          <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Calendar</a>
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{% trans 'My Calendar' %}</a>
          </li>
          <li class="nav-item" style="margin-left: 4%">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">CommGen Calendar</a>
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">CommGen {% trans 'Calendar' %}</a>
          </li>
       </ul>
       <div class="tab-content" id="myTabContent">

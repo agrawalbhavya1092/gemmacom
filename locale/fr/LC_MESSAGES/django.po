@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-30 16:09+0530\n"
+"POT-Creation-Date: 2018-09-10 14:57+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,50 +39,54 @@ msgid ""
 "look into it as soon as possible."
 msgstr ""
 
-#: .\templates\footer.html:3
-msgid ""
-"For any question, please contact the IT Help Desk for Equant Staff, the Self "
-"Service Support for ECS Orange SA Staff "
-msgstr ""
-
 #: .\templates\fullcalendar.html:6
 msgid "Fullcalendar"
 msgstr ""
 
 #: .\templates\homepage.html:5
 msgid "Welcome"
-msgstr ""
+msgstr "Bienvenue"
 
 #: .\templates\homepage.html:46
 msgid "The list of available Calendars."
-msgstr ""
+msgstr "La liste des calendriers disponibles."
 
 #: .\templates\homepage.html:47
 msgid "Full Calendar Example"
 msgstr ""
 
-#: .\templates\index.html:11
+#: .\templates\index.html:11 .\templates\index_060918backup.html:11
 msgid "Manage Campaign"
 msgstr "Gérer la campagne"
 
-#: .\templates\index.html:21
+#: .\templates\index.html:30 .\templates\index_060918backup.html:21
 msgid "Manage Mailing List"
 msgstr "Gérer la liste de diffusion"
 
-#: .\templates\index.html:31
+#: .\templates\index.html:48 .\templates\index_060918backup.html:31
 msgid "Manage Templates"
 msgstr "Gérer les modèles"
 
-#: .\templates\index.html:41
+#: .\templates\index.html:66 .\templates\index_060918backup.html:41
 msgid "Reports & Statistics"
 msgstr "Rapports et statistiques"
 
-#: .\templates\index.html:57 .\templates\index.html:63
+#: .\templates\index.html:87
+msgid "My Actions"
+msgstr "mes actions"
+
+#: .\templates\index.html:93 .\templates\index.html:134
+#: .\templates\index_060918backup.html:57
+#: .\templates\index_060918backup.html:63
 msgid "Financial Services - Customer Value Proposition"
 msgstr "Services financiers - Proposition de valeur client"
 
-#: .\templates\index.html:60
+#: .\templates\index.html:114 .\templates\index_060918backup.html:60
 msgid "CommGen Introduction"
+msgstr ""
+
+#: .\templates\index.html:160
+msgid "Calendar"
 msgstr ""
 
 #: .\templates\logout.html:5 .\templates\logout.html:9
@@ -93,6 +97,22 @@ msgstr "Déconnexion"
 #: .\templates\logout.html:11
 msgid "Are you sure you want to sign out?"
 msgstr ""
+
+#: .\templates\navbar.html:63
+msgid "New Campaign"
+msgstr "Nouvelle campagne"
+
+#: .\templates\navbar.html:69
+msgid "Help"
+msgstr "Aidez-moi"
+
+#: .\templates\navbar.html:75
+msgid "Notifications"
+msgstr "Les notifications"
+
+#: .\templates\navbar.html:82
+msgid "My Campaign"
+msgstr "ma campagne"
 
 #: .\templates\registration\login.html:4 .\templates\registration\login.html:8
 msgid "Sign In"
@@ -272,13 +292,16 @@ msgid "Now see docstring for schedule.views.calendar"
 msgstr ""
 
 #: .\templates\schedule\calendar_day.html:9
+#: .\templates\schedule\my_calendar_day.html:9
 #: .\venv\Lib\site-packages\schedule\templates\schedule\calendar_day.html:9
 msgid "Week"
 msgstr ""
 
 #: .\templates\schedule\calendar_day.html:12
 #: .\templates\schedule\calendar_week.html:10
-#: .\templates\schedule\event.html:10 .\templates\schedule\occurrence.html:10
+#: .\templates\schedule\event.html:10
+#: .\templates\schedule\my_calendar_day.html:12
+#: .\templates\schedule\occurrence.html:10
 #: .\venv\Lib\site-packages\schedule\templates\schedule\calendar_day.html:12
 #: .\venv\Lib\site-packages\schedule\templates\schedule\calendar_week.html:10
 #: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:10
@@ -288,7 +311,9 @@ msgstr ""
 
 #: .\templates\schedule\calendar_day.html:15
 #: .\templates\schedule\calendar_week.html:13
-#: .\templates\schedule\event.html:13 .\templates\schedule\occurrence.html:13
+#: .\templates\schedule\event.html:13
+#: .\templates\schedule\my_calendar_day.html:15
+#: .\templates\schedule\occurrence.html:13
 #: .\venv\Lib\site-packages\schedule\templates\schedule\calendar_day.html:15
 #: .\venv\Lib\site-packages\schedule\templates\schedule\calendar_week.html:13
 #: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:13
@@ -297,6 +322,7 @@ msgid "Year"
 msgstr ""
 
 #: .\templates\schedule\calendar_day.html:23
+#: .\templates\schedule\my_calendar_day.html:23
 #: .\venv\Lib\site-packages\schedule\templates\schedule\calendar_day.html:23
 msgid "Today"
 msgstr ""
@@ -421,70 +447,70 @@ msgstr ""
 msgid "Never. This is a 'one time only' event."
 msgstr ""
 
-#: .\users\models.py:34 .\users\models.py:285
+#: .\users\models.py:39 .\users\models.py:289
 msgid "groups"
 msgstr ""
 
-#: .\users\models.py:37
+#: .\users\models.py:42
 msgid ""
 "The groups this user belongs to. A user will get all permissions granted to "
 "each of their groups."
 msgstr ""
 
-#: .\users\models.py:155
+#: .\users\models.py:160
 msgid "first name"
 msgstr ""
 
-#: .\users\models.py:156
+#: .\users\models.py:161
 msgid "preferred first name"
 msgstr ""
 
-#: .\users\models.py:158
+#: .\users\models.py:163
 msgid "last name"
 msgstr ""
 
-#: .\users\models.py:159
+#: .\users\models.py:164
 msgid "preferred last name"
 msgstr ""
 
-#: .\users\models.py:160
+#: .\users\models.py:165
 msgid "middle name"
 msgstr ""
 
-#: .\users\models.py:161
+#: .\users\models.py:166
 msgid "title"
-msgstr ""
+msgstr "title"
 
-#: .\users\models.py:162
+#: .\users\models.py:167
 msgid "preferred language"
 msgstr ""
 
-#: .\users\models.py:230
+#: .\users\models.py:234
 msgid "id"
 msgstr ""
 
-#: .\users\models.py:231 .\users\models.py:270
+#: .\users\models.py:235 .\users\models.py:274
 #: .\venv\Lib\site-packages\django\utils\translation\__init__.py:252
 msgid "name"
 msgstr ""
 
-#: .\users\models.py:232 .\users\models.py:271
+#: .\users\models.py:236 .\users\models.py:275
 msgid "status"
 msgstr ""
 
-#: .\users\models.py:233 .\users\models.py:272
+#: .\users\models.py:237 .\users\models.py:276
 msgid "description"
 msgstr ""
 
-#: .\users\models.py:237
+#: .\users\models.py:241
 msgid "content type"
 msgstr ""
 
-#: .\users\models.py:239
+#: .\users\models.py:243
 msgid "codename"
 msgstr ""
 
-#: .\users\models.py:284
+#: .\users\models.py:288
 msgid "group"
 msgstr ""
 
@@ -1722,6 +1748,3 @@ msgstr ""
 
 #~ msgid "This is the time using your local information"
 #~ msgstr "C'est le moment d'utiliser votre information locale"
-
-#~ msgid "Lets translate"
-#~ msgstr "Traduisons"

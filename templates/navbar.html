@@ -6,7 +6,7 @@
       <!-- <div class="container"> -->
         <div class="navbar-brand flex-row">
         <img src="/media/orange_logo.jpg" style="margin-left: 15%">
-        <a href="#" style="color: #f16e00;display: block;font-size: 17px">CommGen</a>
+        <a href="{% url 'main_page' 'calendar1' %}" style="color: #f16e00;display: block;font-size: 17px">CommGen</a>
           
         </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
         <form class="navbar-form ml-5" role="search">
         <div class="right-inner-addon">
           <i class="icon-search" style="font-size: 20px;"></i>
-          <input type="text" class="form-control" placeholder="Search Campaign, Templates and Mailing Lists.." name="srch-term" id="srch-term" style="overflow-x: auto; width: 350px;height: 36%;font-size: 13px;border-radius: 10px;border: 2px solid #f16e00;">
+          <input type="text" class="form-control" placeholder="Search Campaign, Templates and Mailing Lists.." name="srch-term" id="srch-term" style="overflow-x: auto; width: 350px;height: 36%;min-height: 44px;font-size: 13px;border-radius: 10px;border: 2px solid #f16e00;">
           <div class="input-group-append">
             <button class="btn btn-default" type="submit" style="display: none;">
               <!-- <i class="fa fa-search"></i> -->
@@ -29,7 +29,7 @@
           <li class="nav-item active">
             <div class="nav-link">
             <b> <i>Welcome{{ request.user.get_full_name }}&nbsp; &nbsp;|</i></b>
-            <a href="{% url 'logout' %}"><i class="fa fa-power-off" aria-hidden="true" style="color: #f16e00"></i></a>&nbsp; &nbsp;
+            <a class="shutdown-link" href="{% url 'logout' %}"><i class="fa fa-power-off" aria-hidden="true"></i></a>&nbsp; &nbsp;
             {% get_current_language as LANGUAGE_CODE %}
             {% get_available_languages as LANGUAGES %}
             {% if LANGUAGE_CODE == "fr" %}
@@ -58,44 +58,36 @@
         </ul>
         <ul class="navbar-nav flex-row">
           <li class="nav-item active pt-2 pr-5">
-            <div class="bs-glyphicons" style="color: white">
-            <span class="icon-edit_email" aria-hidden="true" style="padding-left: 30%"></span>
-            <span class="glyphicon-class">New Campaign</span>
+            <div class="bs-glyphicons" >
+            <a href="" class="nav-links" style="color: white"><span class="icon-edit_email" aria-hidden="true" style="padding-left: 30%"></span>
+            <span class="glyphicon-class">{% trans 'New Campaign' %}</span></a>
           </div>
           </li>
           <li class="nav-item active pt-2 pr-5">
             <div class="bs-glyphicons" style="color: white">
-            <center><span class="icon-help_guide" aria-hidden="true"></span></center>
-            <span class="glyphicon-class">Help</span>
+            <a href="" class="nav-links" style="color: white"><center><span class="icon-help_guide" aria-hidden="true"></span></center>
+            <span class="glyphicon-class">{% trans 'Help' %}</span></a>
           </div>
           </li>
           <li class="nav-item active pt-2 pr-5">
             <div class="bs-glyphicons" style="color: white">
-            <span class="icon-Notification_Bell" aria-hidden="true" style="padding-left: 30%"></span><span class="badge badge-notify">3</span>
-            <span class="glyphicon-class" style="align-items: center;">Notifications</span>
+            <a href="" class="nav-links" style="color: white"><span class="icon-Notification_Bell" aria-hidden="true" style="padding-left: 30%"></span><span class="badge badge-notify">3</span>
+            <span class="glyphicon-class" style="align-items: center;">{% trans 'Notifications' %}</span></a>
           </div>
           </li>
           <li class="nav-item active pt-2 pr-5">
             <div class="bs-glyphicons" style="color: white">
-            <span class="icon-my_account" aria-hidden="true" style="padding-left: 30%"></span>
-            <span class="glyphicon-class">My Campaign</span>
+            <a href="" class="nav-links" style="color: white">
+              <span class="icon-my_account" aria-hidden="true" style="padding-left: 30%"></span>
+            <span class="glyphicon-class">{% trans 'My Campaign' %}</span>
+          </a>
           </div>
-          </li
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-
-            </a>
           </li>
         </ul>
 
           </div>
-      <!-- </div> -->
     </nav>
     <script type="text/javascript">
-// $(document).ready(function(){
-      // $("#language").attr("value", "fr");
-      // $("#language_submit").click();
-// });
     $("#fr_flag").click(function () {
       $("#language_submit").click();
     });

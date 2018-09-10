@@ -3794,6 +3794,35 @@ fieldset[disabled] .btn-default:hover {
 	border-color: #f16e00
 }
 
+
+.nav-links: {
+	color: white;
+}
+
+.nav-links.focus,
+.nav-links:focus {
+	border-bottom: black;
+}
+
+.nav-links:hover {
+	border-bottom: black;
+
+}
+
+
+.shutdown-link {
+	color: #f16e00;
+}
+.shutdown-link:hover {
+	color: #fff;
+}
+
+
+
+
+
+
+
 .btn-primary.focus,
 .btn-primary:focus {
 	color: #fff;
@@ -8553,6 +8582,7 @@ button.close {
 
 .nav-tabs .nav-link {
 	color: #8f8f8f;
+	font-weight: 700;
 	/*background-color: #50be87;*/
 	/*border: 1px solid #8f8f8f;*/
 	/*max-width: 40%;*/
