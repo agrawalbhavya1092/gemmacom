@@ -29,7 +29,6 @@ virtualenv
 
 venv/
 .DS_Store
-
+*backup*
 *.prefs
-*.mo
 /.stfolder

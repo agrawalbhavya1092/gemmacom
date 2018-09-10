@@ -1,76 +1,162 @@
 {% extends "base.html" %}
 {% load static %}
+{% load tz %}
 {% load scheduletags i18n %}
 {% block head_title %}Contact || {{ block.super }}{% endblock head_title %}
 {% block content %}
 <div class="container-fluid">
 <div class="row">
-   <div class="col-md-3">
+   <div class="col-md-3" style="padding-left: 0;padding-right: 0">
       <div class="card">
          <h5 class="card-header">{% trans "Manage Campaign" %}</h5>
          <div class="card-body">
-            <center>
-            <img class="rounded p-5" src="/media/manage_campaign_icon.jpg" alt="Card image cap">
-            </center>
+          <div class="row align-items-baseline" style="padding-bottom: 5%">
+            <div class="col-md-3" style="bottom: 0">
+              <p>23</p>
+            </div>
+            <div class="col-md-6">
+            <img class="rounded p-3" src="/media/manage_campaign_icon.jpg" alt="Card image cap">
+              
+            </div>
+            <div class="col-md-3">
+              <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
+            </div>
+          </div>
          </div>
       </div>
    </div>
-   <div class="col-md-3">
+   <div class="col-md-3" style="padding-left: 0;padding-right: 0">
       <div class="card">
          <h5 class="card-header">{% trans "Manage Mailing List" %}</h5>
          <div class="card-body">
-            <center>
-            <img class="rounded p-5" src="/media/manage_mailing_list_icon.jpg" alt="Card image cap">
-            </center>
+          <div class="row" style="padding-bottom: 5%">
+            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+              2
+            </div>
+            <div class="col-md-6">
+            <img class="rounded p-3" src="/media/manage_mailing_list_icon.jpg" alt="Card image cap">
+            </div>
+            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+              <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
+            </div>
+          </div>
          </div>
       </div>
    </div>
-   <div class="col-md-3">
+   <div class="col-md-3" style="padding-left: 0;padding-right: 0">
       <div class="card">
          <h5 class="card-header">{% trans "Manage Templates" %}</h5>
          <div class="card-body">
-            <center>
-            <img class="rounded p-5" src="/media/manage_templates_icon.jpg" alt="Card image cap">
-         </center>
+          <div class="row" style="padding-bottom: 5%">
+            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+              2
+            </div>
+            <div class="col-md-6">
+            <img class="rounded p-3" src="/media/manage_templates_icon.jpg" alt="Card image cap">
+            </div>
+            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+              <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
+            </div>
+          </div>
          </div>
       </div>
    </div>
-   <div class="col-md-3">
+   <div class="col-md-3" style="padding-left: 0;padding-right: 0">
       <div class="card">
          <h5 class="card-header">{% trans "Reports & Statistics" %}</h5>
          <div class="card-body">
-            <center>
-            <img class="rounded p-5" src="/media/manage_reports_icon.jpg" alt="Card image cap">
-         </center>   
+          <div class="row" style="padding-bottom: 5%">
+            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+              12
+            </div>
+            <div class="col-md-6">
+            <img class="rounded p-3" src="/media/manage_reports_icon.jpg" alt="Card image cap">
+            </div>
+            <div class="col-md-3" style="padding-left: 10%;padding-top: 25%">
+              <i class="fa fa-caret-down" style="font-size: 180%;color: #666666;"></i>
+            </div>
+          </div>
          </div>
       </div>
    </div>
 </div>
 <div class="row">
    <div class="col-md-8">
-      <div class="card1">
-         <div class="card1-header">
+      <div class="card" style="max-height: 35%">
+         <div class="card-header">
             <center>My Actions</center>
          </div>
          <ul class="list-group list-group-flush">
-            <li class="list-group-item">{% trans 'Financial Services - Customer Value Proposition' %}<br>
+            <li class="list-group-item">
+              <div class="row" style="margin-top: 0">
+                <div class="col-md-10">
+              {% trans 'Financial Services - Customer Value Proposition' %}</div>
+              <div class="col-md-2 dropdown" style="align-content: left">
+                <button class="btn btn-default setting dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="fa fa-cog"></i>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+              <!-- <br> -->
                <button type="button" class="btn btn-primary mini">Draft</button>
             </li>
-            <li class="list-group-item">{% trans 'CommGen Introduction' %}<br>
+                        <li class="list-group-item">
+              <div class="row" style="margin-top: 0">
+                <div class="col-md-10">
+              {% trans 'CommGen Introduction' %}</div>
+              <div class="col-md-2 dropdown" style="align-content: left">
+                <button class="btn btn-default setting dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="fa fa-cog"></i>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
                <button type="button" class="btn btn-primary mini">Draft</button>
             </li>
-            <li class="list-group-item">{% trans 'Financial Services - Customer Value Proposition' %}<br>
-               <button type="button" class="btn btn-primary mini">Approval</button>
+                        <li class="list-group-item">
+              <div class="row" style="margin-top: 0">
+                <div class="col-md-10">
+              {% trans 'Financial Services - Customer Value Proposition' %}</div>
+              <div class="col-md-2 dropdown" style="align-content: left">
+                <button class="btn btn-default setting dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <i class="fa fa-cog"></i>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>
+            </div>
+               <button type="button" class="btn btn-primary mini">Draft</button>
             </li>
          </ul>
       </div>
    </div>
    <div class="col-md-4" align="center">
-      <ul class="nav nav-tabs" id="myTab" role="tablist" style="max-width: 74%">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
          <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Calendar</a>
          </li>
-         <li class="nav-item" style="margin-left: 14%">
+         <li class="nav-item" style="margin-left: 4%">
             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">CommGen Calendar</a>
          </li>
       </ul>
@@ -87,14 +173,17 @@
    </div>
 </div>
 </div>
-<script>
+    <script type="text/javascript">
+        $('.dropdown-toggle').dropdown();
+        $().dropdown('toggle')
+    </script>
+<!-- <script>
     $("#id_prev").click(function () {
       var url = $("#id_prev").attr("load-calendar-url");
 
       $.ajax({
         url: url,
         success: function (data) {  
-      // alert("!!!!!!!!!!!!!!!!!!!!!!");
           $("#home").html(data);
         }
       });
@@ -113,5 +202,5 @@
 
     });
 
-  </script>
+  </script> -->
 {% endblock  %}

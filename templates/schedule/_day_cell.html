@@ -1,9 +1,10 @@
 {% load scheduletags %}
+{% load tz %}
 {% ifnotequal day.start.month month.start.month %}
   <td class="muted"></td>
 {% else %}
   {% if day.has_occurrences %}
-    <td class="btn-primary gradient" style="border: 2px solid #f16e00;">
+    <td class="btn-primary gradient" style="border: 2px solid #f16e00;" data-toggle="tooltip" data-placement="top" title="{{day|get_event_on_tooltip}}">
   {% else %}
     <td>
   {% endif %}

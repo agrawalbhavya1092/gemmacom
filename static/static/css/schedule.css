@@ -30,6 +30,30 @@ table, th, td {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
+.btn-default.setting {
+    /*border-color: ;*/
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 800;
+    background: -moz-linear-gradient(top,  #dddddd 50%, #dddddd 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#dddddd), color-stop(50%,#dddddd)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dddddd 50%,#dddddd 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dddddd 50%,#dddddd 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dddddd 50%,#dddddd 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dddddd 50%,#dddddd 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+.btn-default.setting:hover, .btn-primary.mini:focus, .btn-primary.mini:active, .btn-primary.mini.active, .open > .dropdown-toggle.btn-primary {
+    background: -moz-linear-gradient(top,  #cccccc 50%, #cccccc 50%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#cccccc), color-stop(50%,#cccccc)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cccccc 50%,#cccccc 50%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cccccc 50%,#cccccc 50%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cccccc 50%,#cccccc 50%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cccccc 50%,#cccccc 50%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  }
+
 .btn-primary.mini {
     border-color: #f16e00;
     padding: 1px 5px;

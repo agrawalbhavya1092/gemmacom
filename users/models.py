@@ -9,10 +9,15 @@ from django.utils.translation import gettext_lazy as _
 class UsersRoles(models.Model):
     user = models.ForeignKey('User',on_delete = models.CASCADE,db_column = 'CG_UM_ALTER_EMPLID')
     group = models.ForeignKey('Group',on_delete = models.CASCADE,db_column = 'CG_UM_ROLE_ID')
+    class Meta:
+        db_table = 'CM_User_roles_mapping_tbl'
 
 class RolesPermissions(models.Model):
     group = models.ForeignKey('Group',on_delete = models.CASCADE,db_column = 'CG_ROLE_ID')
     permissions = models.ForeignKey('Permissions',on_delete = models.CASCADE,db_column = 'CG_PERMISSION_ID')
+
+    class Meta:
+        db_table = 'CM_role_perm_mapping_tbl'
 
 
 class PermissionsMixin(models.Model):
@@ -172,17 +177,16 @@ class User(AbstractBaseUser,PermissionsMixin):
     objects = UserManager()
 
 
-
     def get_full_name(self):
         # The user is identified by their email address
-        return self.email
+        return ' '+self.first_name+' '+self.last_name
 
     def get_short_name(self):
         # The user is identified by their email address
         return self.email
 
     def __str__(self):              # __unicode__ on Python 2
-        return self.email
+        return self.first_name+' '+self.last_name
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
@@ -210,7 +214,7 @@ class User(AbstractBaseUser,PermissionsMixin):
         return self.active
 
     class Meta:
-    	db_table = 'User'
+    	db_table = 'CM_User_Prfl_tbl'
     	permissions= (
             ("test_permission", "To provide view facility"),
             ("test_permission_3", "Cannot view"),)
@@ -240,7 +244,7 @@ class Permissions(models.Model):
     objects = PermissionManager()
 
     class Meta:
-        db_table = 'Permissions'
+        db_table = 'CM_permission_tbl'
         # verbose_name_plural = _('permissions')
         unique_together = (('content_type', 'codename'),)
         ordering = ('content_type__app_label', 'content_type__model',
@@ -280,7 +284,7 @@ class Group(models.Model):
     objects = GroupManager()
 
     class Meta:
-        db_table = 'Group'
+        db_table = 'CM_role_tbl'
         verbose_name = _('group')
         verbose_name_plural = _('groups')
 

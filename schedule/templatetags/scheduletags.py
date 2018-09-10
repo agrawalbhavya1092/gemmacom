@@ -1,7 +1,7 @@
 from __future__ import division
 
 import datetime
-
+from django.utils.timezone import tzinfo
 from django import template
 from django.conf import settings
 from django.urls import reverse
@@ -20,6 +20,20 @@ from schedule.settings import (
 )
 
 register = template.Library()
+
+@register.filter
+def get_dir(user):
+    print('.........................................................................',user.get_full_name)
+    return dir(user)
+
+@register.filter
+def get_event_on_tooltip(day):
+    count = 0
+    for event in day.occurrences:
+        count += 1
+        if count>1:
+            return "Multiple Campaigns"
+    return event.title+','+str(event.start.strftime('%H:%M'))+' - '+str(event.end.strftime('%H:%M'))
 
 
 @register.inclusion_tag('schedule/_month_table.html', takes_context=True)
@@ -40,6 +54,16 @@ def month_table(context, calendar, month, size='regular', shift=None):
 
 @register.inclusion_tag('schedule/_my_month_table.html', takes_context=True)
 def my_month_table(context, calendar, month, size='regular', shift=None):
+    from django.utils import timezone
+    import pytz
+
+    tz = pytz.timezone('UTC')
+    print("tz............",tz)
+
+    print("timezonw.............................",timezone.localtime(timezone.now()))
+    print("time.............................",timezone.now())
+    print("timezone now.............",datetime.datetime.now(tz).tzinfo)
+    print("datetime now.............",datetime.datetime.now())
     if shift:
         if shift == -1:
             month = month.prev()
@@ -53,6 +77,8 @@ def my_month_table(context, calendar, month, size='regular', shift=None):
     context['month'] = month
     context['size'] = size
     return context
+
+
 
 @register.inclusion_tag('schedule/_my_day_cell.html', takes_context=True)
 def my_day_cell(context, calendar, day, month, size='regular'):
@@ -231,8 +257,8 @@ def prev_url(target, calendar, period):
         reverse(target, kwargs={'calendar_slug': slug}),
         querystring_for_date(period.prev().start)))
     # return mark_safe('<a load-calendar-url = "%s%s" id="id_prev"><i class="fa fa-angle-left" style="color:#f16e00; margin-right:40px"></i></a>' % (
-    #     reverse(target, kwargs={'calendar_slug': slug}),
-    #     querystring_for_date(period.prev().start)))
+        # reverse(target, kwargs={'calendar_slug': slug}),
+        # querystring_for_date(period.prev().start)))
 
 @register.simple_tag
 def next_url(target, calendar, period):
