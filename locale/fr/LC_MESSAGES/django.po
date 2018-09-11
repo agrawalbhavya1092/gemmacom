@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-10 14:57+0530\n"
+"POT-Creation-Date: 2018-09-11 11:10+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,26 @@ msgid ""
 "We're sorry but a server error has occurred. We've been notified and will "
 "look into it as soon as possible."
 msgstr ""
+
+#: .\templates\footer.html:3
+msgid "For any question, please contact the"
+msgstr "Pour toute question, veuillez contacter le"
+
+#: .\templates\footer.html:3
+msgid "IT Help Desk"
+msgstr ""
+
+#: .\templates\footer.html:3
+msgid "for Equant Staff, the"
+msgstr "pour le personnel d'Equant, le"
+
+#: .\templates\footer.html:3
+msgid "Self Service Support"
+msgstr "Assistance en libre service"
+
+#: .\templates\footer.html:3
+msgid "for ECS Orange SA Staff"
+msgstr "pour le personnel d'ECS Orange SA"
 
 #: .\templates\fullcalendar.html:6
 msgid "Fullcalendar"
@@ -73,21 +93,59 @@ msgstr "Rapports et statistiques"
 
 #: .\templates\index.html:87
 msgid "My Actions"
-msgstr "mes actions"
+msgstr "Mes Actions"
 
-#: .\templates\index.html:93 .\templates\index.html:134
+#: .\templates\index.html:93 .\templates\index.html:132
 #: .\templates\index_060918backup.html:57
 #: .\templates\index_060918backup.html:63
 msgid "Financial Services - Customer Value Proposition"
 msgstr "Services financiers - Proposition de valeur client"
 
-#: .\templates\index.html:114 .\templates\index_060918backup.html:60
-msgid "CommGen Introduction"
-msgstr ""
+#: .\templates\index.html:100 .\templates\index.html:120
+#: .\templates\index.html:139 .\templates\schedule\event.html:25
+#: .\templates\schedule\occurrence.html:25
+#: .\venv\Lib\site-packages\schedule\templates\fullcalendar_script.html:32
+#: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:25
+#: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:25
+msgid "Edit"
+msgstr "Modifier"
 
-#: .\templates\index.html:160
+#: .\templates\index.html:101 .\templates\index.html:121
+#: .\templates\index.html:140 .\templates\schedule\cancel_occurrence.html:5
+#: .\templates\schedule\delete_event.html:5 .\templates\schedule\event.html:29
+#: .\templates\schedule\occurrence.html:29
+#: .\venv\Lib\site-packages\django\forms\formsets.py:375
+#: .\venv\Lib\site-packages\schedule\templates\fullcalendar_script.html:49
+#: .\venv\Lib\site-packages\schedule\templates\schedule\cancel_occurrence.html:5
+#: .\venv\Lib\site-packages\schedule\templates\schedule\delete_event.html:5
+#: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:29
+#: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:29
+msgid "Delete"
+msgstr "Effacer"
+
+#: .\templates\index.html:103 .\templates\index.html:123
+#: .\templates\index.html:142
+#, fuzzy
+#| msgid "My Actions"
+msgid "Action"
+msgstr "mes actions"
+
+#: .\templates\index.html:108 .\templates\index.html:127
+#: .\templates\index.html:146
+msgid "Draft"
+msgstr "Brouillon"
+
+#: .\templates\index.html:113 .\templates\index_060918backup.html:60
+msgid "CommGen Introduction"
+msgstr "CommGen Introduction"
+
+#: .\templates\index.html:154
+msgid "My Calendar"
+msgstr "Mon Calendrier"
+
+#: .\templates\index.html:157
 msgid "Calendar"
-msgstr ""
+msgstr "Calendrier"
 
 #: .\templates\logout.html:5 .\templates\logout.html:9
 #: .\templates\logout.html:18
@@ -96,27 +154,53 @@ msgstr "Déconnexion"
 
 #: .\templates\logout.html:11
 msgid "Are you sure you want to sign out?"
-msgstr ""
+msgstr "Êtes-vous certain de vouloir vous déconnecter?"
 
-#: .\templates\navbar.html:63
+#: .\templates\navbar.html:19
+msgid "Search Campaign, Templates and Mailing Lists.."
+msgstr "Campagne de recherche, modèles et listes de diffusion.."
+
+#: .\templates\navbar.html:64
 msgid "New Campaign"
 msgstr "Nouvelle campagne"
 
-#: .\templates\navbar.html:69
+#: .\templates\navbar.html:70
 msgid "Help"
 msgstr "Aidez-moi"
 
-#: .\templates\navbar.html:75
+#: .\templates\navbar.html:76
 msgid "Notifications"
 msgstr "Les notifications"
 
-#: .\templates\navbar.html:82
+#: .\templates\navbar.html:83
 msgid "My Campaign"
 msgstr "ma campagne"
 
-#: .\templates\registration\login.html:4 .\templates\registration\login.html:8
+#: .\templates\registration\login.html:4
+#: .\templates\registration\login.html:12
 msgid "Sign In"
-msgstr ""
+msgstr "Se connecter"
+
+#: .\templates\registration\login.html:18
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1656
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+#: .\templates\registration\login.html:22
+msgid "Password"
+msgstr "Mot de passe"
+
+#: .\templates\registration\login.html:26
+msgid "Show Password"
+msgstr "Montrer le mot de passe"
+
+#: .\templates\registration\login.html:27
+msgid "Submit"
+msgstr "Soumettre"
+
+#: .\templates\registration\login.html:48
+msgid "Hide Password"
+msgstr "Cacher le mot de passe"
 
 #: .\templates\schedule\_detail.html:14 .\templates\schedule\event.html:35
 #: .\templates\schedule\occurrence.html:35
@@ -124,7 +208,7 @@ msgstr ""
 #: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:35
 #: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:35
 msgid "Starts"
-msgstr ""
+msgstr "Départs"
 
 #: .\templates\schedule\_detail.html:15 .\templates\schedule\_detail.html:19
 #: .\templates\schedule\_detail.html:29
@@ -161,7 +245,7 @@ msgstr ""
 #: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:39
 #: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:39
 msgid "Ends"
-msgstr ""
+msgstr "Prend fin"
 
 #: .\templates\schedule\_detail.html:19 .\templates\schedule\_detail.html:29
 #: .\templates\schedule\event.html:40 .\templates\schedule\occurrence.html:40
@@ -179,12 +263,12 @@ msgstr ""
 #: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:43
 #: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:43
 msgid "Reoccurs"
-msgstr ""
+msgstr "Se reproduit"
 
 #: .\templates\schedule\_detail.html:28
 #: .\venv\Lib\site-packages\schedule\templates\schedule\_detail.html:28
 msgid "Until"
-msgstr ""
+msgstr "Jusqu'à"
 
 #: .\templates\schedule\_detail.html:36 .\templates\schedule\event.html:51
 #: .\templates\schedule\occurrence.html:51
@@ -192,25 +276,26 @@ msgstr ""
 #: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:51
 #: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:51
 msgid "Description"
-msgstr ""
+msgstr "La description"
 
 #: .\templates\schedule\_detail.html:41
 #: .\venv\Lib\site-packages\schedule\templates\fullcalendar_modal.html:23
 #: .\venv\Lib\site-packages\schedule\templates\schedule\_detail.html:41
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: .\templates\schedule\_dialogs.html:4
 #: .\venv\Lib\site-packages\schedule\templates\schedule\_dialogs.html:4
 msgid ""
 "Do you want to cancel this occurrence or delete all occurrences of this "
 "event?"
-msgstr ""
+msgstr "Voulez-vous annuler cette occurrence ou supprimer toutes les occurrences de cette "
+"un événement?"
 
 #: .\templates\schedule\_dialogs.html:8
 #: .\venv\Lib\site-packages\schedule\templates\schedule\_dialogs.html:8
 msgid "Do you want to edit this occurrence or all occurrences?"
-msgstr ""
+msgstr "Voulez-vous modifier cette occurrence ou toutes les occurrences?"
 
 #: .\templates\schedule\calendar.html:7
 #: .\venv\Lib\site-packages\schedule\templates\schedule\calendar.html:7
@@ -366,18 +451,6 @@ msgstr ""
 msgid "Current Year Calendar"
 msgstr ""
 
-#: .\templates\schedule\cancel_occurrence.html:5
-#: .\templates\schedule\delete_event.html:5 .\templates\schedule\event.html:29
-#: .\templates\schedule\occurrence.html:29
-#: .\venv\Lib\site-packages\django\forms\formsets.py:375
-#: .\venv\Lib\site-packages\schedule\templates\fullcalendar_script.html:49
-#: .\venv\Lib\site-packages\schedule\templates\schedule\cancel_occurrence.html:5
-#: .\venv\Lib\site-packages\schedule\templates\schedule\delete_event.html:5
-#: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:29
-#: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:29
-msgid "Delete"
-msgstr ""
-
 #: .\templates\schedule\cancel_occurrence.html:6
 #: .\venv\Lib\site-packages\schedule\templates\schedule\cancel_occurrence.html:6
 msgid "Are you sure that you really want to cancel this occurrence?"
@@ -419,13 +492,6 @@ msgstr ""
 #: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:7
 #: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:7
 msgid "Day"
-msgstr ""
-
-#: .\templates\schedule\event.html:25 .\templates\schedule\occurrence.html:25
-#: .\venv\Lib\site-packages\schedule\templates\fullcalendar_script.html:32
-#: .\venv\Lib\site-packages\schedule\templates\schedule\event.html:25
-#: .\venv\Lib\site-packages\schedule\templates\schedule\occurrence.html:25
-msgid "Edit"
 msgstr ""
 
 #: .\templates\schedule\event.html:45 .\templates\schedule\occurrence.html:45
@@ -791,10 +857,6 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1604
 msgid "Duration"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1656
-msgid "Email address"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1680

@@ -5,17 +5,18 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <!-- <div class="container"> -->
         <div class="navbar-brand flex-row">
-        <img src="/media/orange_logo.jpg" style="margin-left: 15%">
-        <a href="{% url 'main_page' 'calendar1' %}" style="color: #f16e00;display: block;font-size: 17px">CommGen</a>
+        <a href="{% url 'main_page' 'calendar1' %}"><img src="/media/orange_logo.jpg" style="margin-left: 15%"></a>
+        <p style="color: #f16e00;display: block;font-size: 17px;font-weight: 550">CommGen</p>
           
         </div>
+        {% if request.user.is_authenticated %}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <form class="navbar-form ml-5" role="search">
         <div class="right-inner-addon">
           <i class="icon-search" style="font-size: 20px;"></i>
-          <input type="text" class="form-control" placeholder="Search Campaign, Templates and Mailing Lists.." name="srch-term" id="srch-term" style="overflow-x: auto; width: 350px;height: 36%;min-height: 44px;font-size: 13px;border-radius: 10px;border: 2px solid #f16e00;">
+          <input type="text" class="form-control" placeholder="{% trans 'Search Campaign, Templates and Mailing Lists..' %}" name="srch-term" id="srch-term" style="overflow-x: auto; width: 350px;height: 36%;min-height: 44px;font-size: 13px;border-radius: 10px;border: 2px solid #f16e00;">
           <div class="input-group-append">
             <button class="btn btn-default" type="submit" style="display: none;">
               <!-- <i class="fa fa-search"></i> -->
@@ -33,9 +34,9 @@
             {% get_current_language as LANGUAGE_CODE %}
             {% get_available_languages as LANGUAGES %}
             {% if LANGUAGE_CODE == "fr" %}
-              <img src="/media/us_flag.jpg" id="us_flag">
+              <img src="/media/us_flag.jpg" id="us_flag">&nbsp; &nbsp;
             {% else %}
-              <img src="/media/france_flag.jpg" id="fr_flag">
+              <img src="/media/france_flag.jpg" id="fr_flag">&nbsp; &nbsp;
             {% endif %}
           <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}">
@@ -64,7 +65,7 @@
           </div>
           </li>
           <li class="nav-item active pt-2 pr-5">
-            <div class="bs-glyphicons" style="color: white">
+            <div class="bs-glyphicons">
             <a href="" class="nav-links" style="color: white"><center><span class="icon-help_guide" aria-hidden="true"></span></center>
             <span class="glyphicon-class">{% trans 'Help' %}</span></a>
           </div>
@@ -86,6 +87,7 @@
         </ul>
 
           </div>
+          {% endif %}
     </nav>
     <script type="text/javascript">
     $("#fr_flag").click(function () {

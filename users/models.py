@@ -296,3 +296,33 @@ class Group(models.Model):
 
     class Meta:
     	db_table = 'Role'
+
+
+class DepartmentSetup(models.Model):
+    source = models.CharField(max_length = 10,db_column = 'CM_STP_SOURCE',null = True,blank=True)
+    status = models.CharField(max_length = 50,db_column = 'CM_STP_STATUS',null = True,blank=True)
+    department_id = models.CharField(max_length =10 ,db_column = 'CM_STP_DEPTID',null = True,blank=True)
+    department_name = models.CharField(max_length = 255 ,db_column = 'CM_STP_DEPTNAME',null = True,blank=True)
+    level = models.CharField(max_length = 4,db_column = 'CM_STP_LEVEL',null = True,blank=True)
+    m1_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M1_DEPT_ID',null = True,blank=True)
+    m1_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M1_DEPT_NAME',null = True,blank=True)
+    m2_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M2_DEPT_ID',null = True,blank=True)
+    m2_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M2_DEPT_NAME',null = True,blank=True)
+    m3_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M3_DEPT_ID',null = True,blank=True)
+    m3_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M3_DEPT_NAME',null = True,blank=True)
+    m4_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M4_DEPT_ID',null = True,blank=True)
+    m4_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M4_DEPT_NAME',null = True,blank=True)
+    m5_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M5_DEPT_ID',null = True,blank=True)
+    m5_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M5_DEPT_NAME',null = True,blank=True)
+    m6_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M6_DEPT_ID',null = True,blank=True)
+    m6_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M6_DEPT_NAME',null = True,blank=True)
+    m7_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M7_DEPT_ID',null = True,blank=True)
+    m7_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M7_DEPT_NAME',null = True,blank=True)
+    m8_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M8_DEPT_ID',null = True,blank=True)
+    m8_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M8_DEPT_NAME',null = True,blank=True)
+    m9_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M9_DEPT_ID',null = True,blank=True)
+    m9_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M9_DEPT_NAME',null = True,blank=True)
+    m10_department_id = models.CharField(max_length = 10,db_column = 'CM_STP_M10_DEPT_ID',null = True,blank=True)
+    m10_department_name = models.CharField(max_length = 255,db_column = 'CM_STP_M10_DEPT_NAME',null = True,blank=True)
+    class Meta:
+        db_table = 'CM_Department_Setup_tbl'

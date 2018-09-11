@@ -1407,7 +1407,7 @@ textarea {
 }
 
 a {
-	color: #337ab7;
+	color: black;
 	text-decoration: none
 }
 
@@ -3789,24 +3789,9 @@ fieldset[disabled] .btn-default:hover {
 }
 
 .btn-primary {
-	color: #f16e00;
-	background-color: #337ab7;
-	border-color: #f16e00
-}
-
-
-.nav-links: {
-	color: white;
-}
-
-.nav-links.focus,
-.nav-links:focus {
-	border-bottom: black;
-}
-
-.nav-links:hover {
-	border-bottom: black;
-
+	background-color: #f16e00;
+	border-color: #f16e00;
+	background-image: linear-gradient(to bottom,#f16e00 0,#f16e00 100%);
 }
 
 
@@ -3826,14 +3811,14 @@ fieldset[disabled] .btn-default:hover {
 .btn-primary.focus,
 .btn-primary:focus {
 	color: #fff;
-	background-color: #286090;
+	background-color: #f16e00;
 	border-color: #f16e00
 }
 
 .btn-primary:hover {
 	color: #fff;
 	background-color: #f16e00;
-	border-color: #204d74
+	border-color: #000
 }
 
 .btn-primary.active,
@@ -3873,7 +3858,7 @@ fieldset[disabled] .btn-default:hover {
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
-	background-color: #337ab7;
+	background-color: #f16e00;
 	border-color: #2e6da4
 }
 
@@ -6502,7 +6487,7 @@ a.thumbnail:hover {
 .list-group-item {
 	position: relative;
 	display: block;
-	padding: 10px 15px;
+	padding: 13px 15px;
 	margin-bottom: -1px;
 	background-color: #fff;
 	border: 1px solid #ddd
@@ -8338,6 +8323,7 @@ button.close {
 	/*padding: .15rem .15rem;*/
 	margin-top: 0.5rem;
 	/*margin-bottom: 0.2;*/
+	font-weight: 600;
 	background-color: rgba(0, 0, 0, 0);
 	border-bottom: 3px solid rgb(241, 110, 0)
 }
@@ -8645,7 +8631,7 @@ button.close {
 	/*border: 1px solid #8f8f8f;*/
 	border: 3px solid rgb(241, 110, 0);
 
-	max-width: 74%;
+	max-width: 87%;
 	
 
 }
@@ -11259,4 +11245,5 @@ button.bg-dark:hover {
 	-webkit-clip-path: none;
 	clip-path: none
 }
+
 /*# sourceMappingURL=bootstrap.min.css.map 

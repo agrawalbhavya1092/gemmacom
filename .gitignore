@@ -26,7 +26,7 @@ pep8.txt
 *.db
 *.tmp
 virtualenv
-
+*/migrations
 venv/
 .DS_Store
 *backup*

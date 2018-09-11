@@ -58,12 +58,6 @@ def my_month_table(context, calendar, month, size='regular', shift=None):
     import pytz
 
     tz = pytz.timezone('UTC')
-    print("tz............",tz)
-
-    print("timezonw.............................",timezone.localtime(timezone.now()))
-    print("time.............................",timezone.now())
-    print("timezone now.............",datetime.datetime.now(tz).tzinfo)
-    print("datetime now.............",datetime.datetime.now())
     if shift:
         if shift == -1:
             month = month.prev()
